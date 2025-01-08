@@ -9,28 +9,28 @@ class Bridge:
     def __init__(self, 
                  description: str, 
                  links_to: Location) -> None:
-        self.description: description
-        self.links_to: links_to
+        self.description = description
+        self.links_to = links_to
 
 class Grid:
     def __init__(self,
                  current_location: Location,
-                 north: Location,
-                 east: Location,
-                 south: Location,
-                 west: Location,
-                 special: Bridge) -> None:
+                **connects_to: Bridge) -> None:
         self.current_location = current_location
-        self.north = north
-        self.east = east
-        self.south = south
-        self.west = west
-        self.special = special
+        if connects_to["north"]:
+            self.north = connects_to["north"]
+        if connects_to["east"]:
+            self.east = connects_to["east"]
+        if connects_to["south"]:
+            self.south = connects_to["south"]
+        if connects_to["west"]:
+            self.west = connects_to["west"]
+
 
 class Map:
     def __init__(self,
                  name: str,
-                 reference: List(Grid)) -> None:
+                 reference: list) -> None:
         self.name = name
         self.reference = reference
 #----- end of file ----- 
