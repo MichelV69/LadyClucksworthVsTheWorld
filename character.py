@@ -2,7 +2,7 @@
 from language import *
 from weapon import fists
 from health_bar import HealthBar
-
+from location import *
 
 # ------------ parent class setup ------------
 class Character:
@@ -28,12 +28,17 @@ class Character:
 class Hero(Character):
     def __init__(self,
                  name: str,
-                 health: int
+                 health: int,
+                 location: Location
                  ) -> None:
         super().__init__(name=name, health=health)
 
         self.default_weapon = self.weapon
         self.health_bar = HealthBar(self, color="green")
+        self.location = new_fort_cluckhaven
+
+    def surroundings(self) -> None:
+        print(f"Location: {self.location.look_around()}")
 
     def equip(self, weapon) -> None:
         self.weapon = weapon

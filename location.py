@@ -11,6 +11,13 @@ class Location:
         self.lore_unlocked = False
         self.visits = 0
 
+    def look_around(self) -> str:
+        you_see: str = f"{self.name} \n {self.description}"
+        lore_skill_check = True
+        if lore_skill_check :
+            you_see += f"\n Ancient Lore : {self.lore}"
+        return you_see
+
 # ------------ object creation ------------
 new_fort_cluckhaven = Location(name="New Fort Cluckhaven",
                                description="An impressive bastion of saftey for all of the Chickens, Geese and Ducks of Apple Tree Yard. It has solid walls, anti-weasel infiltration screens, sunbeam pass-through projectors, and has two seperate sets of feed and water spots. Best of all, it has ample extra space for everyone to roost. Except for Cragglesnorts The Goose, of course, who refuses to climb up onto anything.",
