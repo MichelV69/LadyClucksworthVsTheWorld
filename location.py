@@ -23,7 +23,7 @@ new_fort_cluckhaven = Location(name="New Fort Cluckhaven",
                                description='''  An impressive bastion of saftey for all of the Chickens,
  Ducks and Geese of Apple Tree Yard. It has solid walls, anti-weasel infiltration screens,
  sunbeam pass-through projectors, and has two seperate sets of feed and water spots.
-    Best of all, it has ample extra space for everyone to roost. 
+    Best of all, it has ample extra space for everyone to roost without squabbles. 
     Except for Cragglesnorts The Goose, of course, who refuses to climb up onto anything.''',
                                lore=''' Built by Mister Egg-Taker upon the ruins of the original Fort Cluckhaven,
  after Junior Egg-Taker destroyed the original early two Spring Times ago.'''

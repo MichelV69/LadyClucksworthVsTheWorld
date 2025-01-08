@@ -4,6 +4,7 @@ from character import Hero, Enemy
 from weapon import short_bow, iron_sword
 from language import *
 from location import *
+from map import Map
 
 # ------------ setup ------------
 hero = Hero(name="Hero", health=100, location=new_fort_cluckhaven)
