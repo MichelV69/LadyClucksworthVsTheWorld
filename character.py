@@ -1,4 +1,5 @@
 # ------------ imports ------------
+from language import *
 from weapon import fists
 from health_bar import HealthBar
 
@@ -20,7 +21,7 @@ class Character:
         target.health = max(target.health, 0)
         target.health_bar.update()
         print(f"{self.name} dealt {self.weapon.damage} damage to "
-              f"{target.name} with {self.weapon.name}")
+              f"{target.name} with {ana(self.weapon.name)} {self.weapon.name}")
 
 
 # ------------ subclass setup ------------
@@ -36,7 +37,7 @@ class Hero(Character):
 
     def equip(self, weapon) -> None:
         self.weapon = weapon
-        print(f"{self.name} equipped a(n) {self.weapon.name}!")
+        print(f"{self.name} equipped {ana(self.weapon.name)} {self.weapon.name}!")
 
     def drop(self) -> None:
         print(f"{self.name} dropped the {self.weapon.name}!")

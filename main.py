@@ -2,6 +2,7 @@
 import os
 from character import Hero, Enemy
 from weapon import short_bow, iron_sword
+from language import *
 
 # ------------ setup ------------
 hero = Hero(name="Hero", health=100)
@@ -15,11 +16,11 @@ game_states: dict = {
     'scene1_finished': False
 }
 
-game_states.menu = False;
+game_states['menu'] = False;
 
 # ------------ game loop ------------
 while True:
-    os.system("cls")
+    os.system("clear")
 
     hero.attack(enemy)
     enemy.attack(hero)
