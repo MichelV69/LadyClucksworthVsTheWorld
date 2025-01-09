@@ -6,8 +6,8 @@ from location import *
 
 # ------------ parent class setup ------------
 class Bridge:
-    def __init__(self, 
-                 description: str, 
+    def __init__(self,
+                 description: str,
                  links_to: Location) -> None:
         self.description = description
         self.links_to = links_to
@@ -17,15 +17,14 @@ class Grid:
                  current_location: Location,
                 **connects_to: Bridge) -> None:
         self.current_location = current_location
-        if connects_to["north"]:
+        if "north" in connects_to:
             self.north = connects_to["north"]
-        if connects_to["east"]:
+        if "east" in connects_to:
             self.east = connects_to["east"]
-        if connects_to["south"]:
+        if "south" in connects_to:
             self.south = connects_to["south"]
-        if connects_to["west"]:
+        if "west" in connects_to:
             self.west = connects_to["west"]
-
 
 class Map:
     def __init__(self,
@@ -33,4 +32,4 @@ class Map:
                  reference: list) -> None:
         self.name = name
         self.reference = reference
-#----- end of file ----- 
+#----- end of file -----

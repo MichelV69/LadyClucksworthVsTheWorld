@@ -20,20 +20,29 @@ game_states: dict = {
 
 ## --- build world map
 list_of_grid_references = []
-## scene 1 : new_fort_cluckhaven
-link_north = Bridge("hole in the fence", 
+### scene 1 : new_fort_cluckhaven
+link_north = Bridge("hole in the fence",
                     apple_tree_yard)
 
-scene_setting = Grid(new_fort_cluckhaven, 
+scene_setting = Grid(new_fort_cluckhaven,
                      north= link_north )
 
 list_of_grid_references.append(scene_setting)
 
-## scene 2 : apple_tree_yard
+### scene 2 : apple_tree_yard
+link_west = Bridge("opened garden gate",
+                   primrose_path)
 
-## scene 3 : primrose_path
+scene_setting = Grid(apple_tree_yard,
+                     west= link_west )
 
-game_world = Map("World_of_Lady_Clucksworth", 
+list_of_grid_references.append(scene_setting)
+
+### scene 3 : primrose_path
+
+
+### assemble map
+game_world = Map("World_of_Lady_Clucksworth",
                  list_of_grid_references)
 
 ## --- prime game loop menu
@@ -46,7 +55,7 @@ while user_do.lower() != 'q':
 
     hero.surroundings()
     print("\n")
-   
+
 ##/*
 ##    hero.attack(enemy)
 ##    enemy.attack(hero)
@@ -55,3 +64,6 @@ while user_do.lower() != 'q':
 ##    enemy.health_bar.draw()
 ##*/
     user_do = input(HealthBar.colors["blue"]+" > " + HealthBar.colors["purple"])
+
+    print(HealthBar.colors["default"]+"\n")
+# ------ end of file -----
