@@ -54,6 +54,7 @@ while user_do.lower() != 'q':
     os.system("clear")
 
     hero.surroundings()
+    game_world.get_available_destinations(hero.location)
     print("\n")
 
 ##/*

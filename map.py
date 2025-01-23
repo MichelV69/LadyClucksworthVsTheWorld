@@ -32,4 +32,8 @@ class Map:
                  reference: list) -> None:
         self.name = name
         self.reference = reference
+
+    def get_available_destinations(hero_location: Location) -> None:
+        if hero_location.name in self.reference.get_all_location_names():
+            print(f"Found {hero_location.name}")
 #----- end of file -----
