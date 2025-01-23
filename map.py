@@ -29,11 +29,17 @@ class Grid:
 class Map:
     def __init__(self,
                  name: str,
-                 reference: list) -> None:
+                 scene_settings: list) -> None:
         self.name = name
-        self.reference = reference
+        self.scene_settings = scene_settings
 
-    def get_available_destinations(hero_location: Location) -> None:
-        if hero_location.name in self.reference.get_all_location_names():
+    def get_available_destinations(self, hero_location: Location) -> None:
+        if hero_location.name in self.get_all_location_names():
             print(f"Found {hero_location.name}")
+
+    def get_all_location_names(self) -> list:
+        result: list = []
+        for location_name in self.scene_settings.name:
+            result.append(location_name)
+        return result
 #----- end of file -----

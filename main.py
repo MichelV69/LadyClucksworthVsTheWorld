@@ -19,7 +19,7 @@ game_states: dict = {
 }
 
 ## --- build world map
-list_of_grid_references = []
+list_of_scene_settings = []
 ### scene 1 : new_fort_cluckhaven
 link_north = Bridge("hole in the fence",
                     apple_tree_yard)
@@ -27,7 +27,7 @@ link_north = Bridge("hole in the fence",
 scene_setting = Grid(new_fort_cluckhaven,
                      north= link_north )
 
-list_of_grid_references.append(scene_setting)
+list_of_scene_settings.append(scene_setting)
 
 ### scene 2 : apple_tree_yard
 link_west = Bridge("opened garden gate",
@@ -36,14 +36,14 @@ link_west = Bridge("opened garden gate",
 scene_setting = Grid(apple_tree_yard,
                      west= link_west )
 
-list_of_grid_references.append(scene_setting)
+list_of_scene_settings.append(scene_setting)
 
 ### scene 3 : primrose_path
 
 
 ### assemble map
 game_world = Map("World_of_Lady_Clucksworth",
-                 list_of_grid_references)
+                 list_of_scene_settings)
 
 ## --- prime game loop menu
 game_states['menu'] = False;
