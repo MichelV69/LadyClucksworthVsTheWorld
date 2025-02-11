@@ -21,20 +21,20 @@ game_states: dict = {
 ## --- build world map
 list_of_scene_settings = []
 ### scene 1 : new_fort_cluckhaven
-link_north = Bridge("hole in the fence",
+link_north = LinkDetails("apple_tree_yard", "hole in the fence",
                     apple_tree_yard)
 
-scene_setting = Grid(new_fort_cluckhaven,
-                     north= link_north )
+scene_setting = TravelLink(new_fort_cluckhaven,
+                     Direction.NORTH, link_north )
 
 list_of_scene_settings.append(scene_setting)
 
 ### scene 2 : apple_tree_yard
-link_west = Bridge("opened garden gate",
+link_west = LinkDetails("primrose_path", "opened garden gate",
                    primrose_path)
 
-scene_setting = Grid(apple_tree_yard,
-                     west= link_west )
+scene_setting = TravelLink(apple_tree_yard,
+                     Direction.WEST, link_west )
 
 list_of_scene_settings.append(scene_setting)
 
