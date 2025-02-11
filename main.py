@@ -5,6 +5,7 @@ from weapon import short_bow, iron_sword
 from language import *
 from location import *
 from map import *
+from ansi_out import * 
 
 # ------------ setup ------------
 hero = Hero(name="Hero", health=100, location=new_fort_cluckhaven)
@@ -83,7 +84,7 @@ while user_do.lower() != 'q':
 ##    hero.health_bar.draw()
 ##    enemy.health_bar.draw()
 ##*/
-    user_do = input(HealthBar.colors["blue"]+" choice >> " + HealthBar.colors["purple"])
+    user_do = input(ANSI.colors["blue"]+" choice >> " + ANSI.colors["purple"])
 
-    print(HealthBar.colors["default"]+"\n")
+    print(ANSI.colors["default"]+"\n")
 # ------ end of file -----
