@@ -38,6 +38,7 @@ class Map:
         result: list = []
         for link_details in self.travel_links:
             if link_details.current_location.name == hero_location.name:
-                result.append(f"To the {Direction(link_details.travel_direction)} you can travel to {link_details.connects_to.short_name}")
+                work_text = f"{Direction(link_details.travel_direction)}"
+                result.append(f"To the {work_text.replace("Direction.","").title()} you can travel to {link_details.connects_to.short_name.replace("_", " ").title()}")
         return result
 #----- end of file -----

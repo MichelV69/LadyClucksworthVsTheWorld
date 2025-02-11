@@ -1,4 +1,8 @@
 #----- start of file -----
+# ------------ imports ------------
+from map import Direction
+
+# ------------ functions ------------
 def ana(phrase: str) -> str:
     ana = 'a'
     vowels: list[str]= ['a', 'e', 'i', 'o', 'u']
@@ -7,7 +11,4 @@ def ana(phrase: str) -> str:
 
     return ana
 
-def clean_output(phrase : str) -> str:
-    cleaned_up = phrase
-    return cleaned_up
 #----- end of file -----
