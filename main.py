@@ -54,7 +54,8 @@ while user_do.lower() != 'q':
     os.system("clear")
 
     hero.surroundings()
-    game_world.get_available_destinations(hero.location)
+    for travel_direction in game_world.get_available_destinations(hero.location):
+        print(f"  * {travel_direction}\n")
     print("\n")
 
 ##/*

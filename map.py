@@ -25,8 +25,7 @@ class TravelLink:
                  connects_to: LinkDetails) -> None:
         self.current_location = current_location
         self.travel_direction = travel_direction
-        if connects_to is not None:
-            self.connects_to = connects_to
+        self.connects_to = connects_to
 
 class Map:
     def __init__(self,
@@ -36,12 +35,9 @@ class Map:
         self.travel_links = travel_links
 
     def get_available_destinations(self, hero_location: Location) -> None:
-        if hero_location.name in self.get_all_location_names():
-            print(f"Found {hero_location.name}")
-
-    def get_all_location_names(self) -> list:
         result: list = []
         for link_details in self.travel_links:
-            result.append(link_details.connects_to.short_name)
+            if link_details.current_location.name == hero_location.name:
+                result.append(f"To the {Direction(link_details.travel_direction)} you can travel to {link_details.connects_to.short_name}")
         return result
 #----- end of file -----
