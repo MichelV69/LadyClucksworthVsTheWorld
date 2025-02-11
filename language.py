@@ -6,4 +6,8 @@ def ana(phrase: str) -> str:
         ana ='an'
 
     return ana
+
+def clean_output(phrase : str) -> str:
+    cleaned_up = phrase
+    return cleaned_up
 #----- end of file -----
