@@ -53,10 +53,28 @@ user_do: str = "init"
 while user_do.lower() != 'q':
     os.system("clear")
 
+    available_player_options: list = []
+    can_travel = False;
     hero.surroundings()
     for travel_direction in game_world.get_available_destinations(hero.location):
         print(f"  * {travel_direction}\n")
+        can_travel = True;
     print("\n")
+
+    if can_travel:
+        available_player_options.append("Go <direction>")
+
+    available_player_options.append("q (to quit)")
+
+    option_text: str = "\n ... you can: "
+    for option in available_player_options:
+        option_text += f"{option}, "
+
+    option_text = option_text.rstrip()
+    if option_text[-1] == ",":
+        option_text = option_text.rstrip(",") + "."
+
+    print(option_text) 
 
 ##/*
 ##    hero.attack(enemy)
@@ -65,7 +83,7 @@ while user_do.lower() != 'q':
 ##    hero.health_bar.draw()
 ##    enemy.health_bar.draw()
 ##*/
-    user_do = input(HealthBar.colors["blue"]+" > " + HealthBar.colors["purple"])
+    user_do = input(HealthBar.colors["blue"]+" choice >> " + HealthBar.colors["purple"])
 
     print(HealthBar.colors["default"]+"\n")
 # ------ end of file -----
